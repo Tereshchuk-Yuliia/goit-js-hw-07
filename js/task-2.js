@@ -25,27 +25,13 @@ alt: "Group of Horses Running", },
     },
 ];
 
-const listItem = document.querySelector('.gallery');
-const collection = images.map((element) => {
-    const item = document.createElement(`li`);
-    listItem.append(item);
-    const img = document.createElement(`img`);
-    item.append(img);
-    img.setAttribute("src", element.url);
-    img.setAttribute("alt", element.alt);
-    img.style.width = "200px";
-    img.style.height = "100px";
-    return item;
-});
-console.log(listItem);
 
 
+const gallery = document.querySelector('.gallery');
 
+const markup = images
+    .map(img => `<li class"img-item"><img src=${img.url} alt=${img.alt}></li>`)
+.join("")
+console.log(markup)
+gallery.innerHTML = markup;
 
-// const galleryAll = document.querySelector('.gallery');
-
-// const markup = images
-//     .map((img) => `<li class"img-item"><src=${img.url} alt=${img.alt}></li>`)
-// .join("")
-// console.log(markup)
-// galleryAll.innerHTML = markup;
